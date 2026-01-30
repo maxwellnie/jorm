@@ -16,7 +16,7 @@ import java.util.Arrays;
  * @author Maxwell Nie
  */
 public class SimpleStatementTest {
-    public static final IntegratedStatement.Executor<Statement, Void> RP = new IntegratedStatement.Executor<Statement, Void>() {
+    public static final Executor<Statement, Void> RP = new Executor<Statement, Void>() {
         @Override
         public Void execute(Statement statement, String sql) throws SQLException {
             System.out.println(statement.executeUpdate(sql));
@@ -93,7 +93,7 @@ public class SimpleStatementTest {
         DBUtils.execute(
                 c -> new SimpleIntegratedStatement(c)
                         .createStatement(batchSql.getSqlString()),
-                is -> System.out.println(Arrays.toString(is.execute(IntegratedStatement.Executor.STATEMENT_BATCH_EXECUTOR)))
+                is -> System.out.println(Arrays.toString(is.execute(Executor.STATEMENT_BATCH_EXECUTOR)))
         );
     }
 
@@ -105,7 +105,7 @@ public class SimpleStatementTest {
         DBUtils.execute(
                 c -> new SimpleIntegratedStatement(c)
                         .createStatement(batchSql.getSqlString()),
-                is -> System.out.println(Arrays.toString(is.execute(IntegratedStatement.Executor.STATEMENT_BATCH_EXECUTOR)))
+                is -> System.out.println(Arrays.toString(is.execute(Executor.STATEMENT_BATCH_EXECUTOR)))
         );
     }
 
@@ -117,7 +117,7 @@ public class SimpleStatementTest {
         DBUtils.execute(
                 c -> new SimpleIntegratedStatement(c)
                         .createStatement(batchSql.getSqlString()),
-                is -> System.out.println(Arrays.toString(is.execute(IntegratedStatement.Executor.STATEMENT_BATCH_EXECUTOR)))
+                is -> System.out.println(Arrays.toString(is.execute(Executor.STATEMENT_BATCH_EXECUTOR)))
         );
     }
 }

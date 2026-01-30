@@ -7,6 +7,7 @@ import java.sql.SQLException;
  */
 public class Test1 {
     public static void main(String[] args) throws SQLException {
+        //============================SimpleStatementTest=============================
         //SimpleStatementTest.testInsert();
         //SimpleStatementTest.testUpdate();
         //SimpleStatementTest.testDelete();
@@ -14,5 +15,16 @@ public class Test1 {
         //SimpleStatementTest.testBatchInert();
         //SimpleStatementTest.testBatchUpdate();
         //SimpleStatementTest.testBatchDelete();
+
+
+        //============================PreparedStatementTest=============================
+        PreparedStatementTest.testQuery();
+        //PreparedStatementTest.testInsert();
+        //PreparedStatementTest.testUpdate();
+        //PreparedStatementTest.testDelete();
+        //PreparedStatementTest.testBatchInsert();
+        PreparedStatementTest.testBatchUpdate();
+        PreparedStatementTest.testBatchDelete();
+        PreparedStatementTest.testQuery();
     }
 }
