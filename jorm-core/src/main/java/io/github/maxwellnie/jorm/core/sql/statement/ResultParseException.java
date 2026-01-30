@@ -3,7 +3,7 @@ package io.github.maxwellnie.jorm.core.sql.statement;
 /**
  * @author Maxwell Nie
  */
-public class ResultParseException extends StatementException{
+public class ResultParseException extends StatementException {
     public ResultParseException() {
     }
 

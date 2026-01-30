@@ -5,11 +5,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- *
  * @author Maxwell Nie
  */
 public class CallableIntegrateStatement extends BaseIntegratedStatement<CallableStatement> {
-    
+
     public CallableIntegrateStatement(Connection connection) {
         super(connection);
     }

@@ -1,7 +1,6 @@
 package io.github.maxwellnie.jorm.core.sql.statement;
 
 
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -62,13 +61,13 @@ public abstract class BaseIntegratedStatement<T extends Statement> implements In
 
     @SuppressWarnings("unchecked")
     @Override
-    public <P, R> R execute(Executor<T, P> executor, ResultParser<T, P, R> resultParser) throws SqlExecutionException, ResultParserException{
+    public <P, R> R execute(Executor<T, P> executor, ResultParser<T, P, R> resultParser) throws SqlExecutionException, ResultParserException {
         validateStatement();
-        if (executor == null){
+        if (executor == null) {
             if (resultParser == null)
                 throw new SqlExecutionException("Executor and Result parser is null");
-            if(defaultExecute())
-                return resultParser.parse(statement,null);
+            if (defaultExecute())
+                return resultParser.parse(statement, null);
             else
                 throw new ResultParserException("Cannot parse result for update operation");
         } else {
@@ -81,13 +80,15 @@ public abstract class BaseIntegratedStatement<T extends Statement> implements In
             }
         }
     }
+
     /**
-     * @see Statement#execute(String)
-     * @see java.sql.PreparedStatement#execute()
      * @return true if the first result is a ResultSet object; false if the first result is an update count or there is no result
      * @throws SqlExecutionException
+     * @see Statement#execute(String)
+     * @see java.sql.PreparedStatement#execute()
      */
     protected abstract boolean defaultExecute() throws SqlExecutionException;
+
     @Override
     public <P> IntegratedStatement<T> parameterize(ParameterHandler<T, P> parametersHandler, P parameters) throws StatementException {
         validateStatement();

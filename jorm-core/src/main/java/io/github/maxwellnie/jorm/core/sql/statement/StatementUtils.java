@@ -47,9 +47,11 @@ public interface StatementUtils {
     static PreparedStatement prepareStatement(Connection connection, String sql) throws SQLException {
         return connection.prepareStatement(sql);
     }
+
     static CallableStatement callableStatement(Connection connection, String sql) throws SQLException {
         return connection.prepareCall(sql);
     }
+
     static CallableStatement callableStatement(Connection connection, String sql, int resultSetType, int resultSetConcurrency, int holdability) throws SQLException {
         CallableStatement callableStatement;
         if (resultSetType > 0 && resultSetConcurrency > 0) {
