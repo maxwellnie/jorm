@@ -26,7 +26,7 @@ interface Executor<T extends Statement, R> {
      * Statement large capacity batch execution executor
      * Used for large capacity batch processing, returning long array result
      */
-    Executor<Statement, long[]> STATEMENT_LARGE_BATCH_EXECUTOR = (statement, sqls) -> {
+    Executor<Statement, long[]> STATEMENT_BATCH_LARGE_BATCH_EXECUTOR = (statement, sqls) -> {
         IntegratedStatement.addBatchSql(statement, sqls);
         return statement.executeLargeBatch();
     };
@@ -34,12 +34,12 @@ interface Executor<T extends Statement, R> {
      * Prepared statement batch execution executor
      * Used for batch processing of prepared statements, returning int array result
      */
-    Executor<PreparedStatement, int[]> PREPARED_STATEMENT_EXECUTOR = (statement, sql) -> statement.executeBatch();
+    Executor<PreparedStatement, int[]> PREPARED_STATEMENT_BATCH_EXECUTOR = (statement, sql) -> statement.executeBatch();
     /**
      * Prepared statement large capacity batch execution executor
      * Used for large capacity batch processing of prepared statements, returning long array result
      */
-    Executor<PreparedStatement, long[]> PREPARED_STATEMENT_LARGE_EXECUTOR = (statement, sql) -> statement.executeLargeBatch();
+    Executor<PreparedStatement, long[]> PREPARED_STATEMENT_BATCH_LARGE_EXECUTOR = (statement, sql) -> statement.executeLargeBatch();
 
     /**
      * Executes Statement and returns result

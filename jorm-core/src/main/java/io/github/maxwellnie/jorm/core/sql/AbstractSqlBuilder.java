@@ -1,7 +1,5 @@
 package io.github.maxwellnie.jorm.core.sql;
 
-import io.github.maxwellnie.jorm.core.sql.single.SingleSqlBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +14,7 @@ public abstract class AbstractSqlBuilder<S extends Sql, P> implements SqlBuilder
         if (parametersSize > 0)
             this.sqlParameters = new ArrayList<>(parametersSize);
     }
+
     public AbstractSqlBuilder() {
         this(0);
     }

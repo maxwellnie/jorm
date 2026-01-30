@@ -13,6 +13,9 @@ import java.util.List;
  */
 public class BatchSqlBuilder extends AbstractSqlBuilder<BatchSql, List<Object>> {
     protected final int batchParametersSize;
+    /**
+     * @param batchSize batch size
+     */
     public BatchSqlBuilder(int batchSize) {
         super(batchSize);
         this.batchParametersSize = 0;
